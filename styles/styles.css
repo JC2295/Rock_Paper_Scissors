@@ -1,0 +1,226 @@
+/*----------------------------------------------*/
+/* | Imported Styles                              */
+/*----------------------------------------------*/
+
+
+
+
+/*----------------------------------------------*/
+/* | Custom Properties                            */
+/*----------------------------------------------*/
+
+:root {
+ /*Global variables*/
+}
+
+/*----------------------------------------------*/
+/* | Reset & General Styles                       */
+/*----------------------------------------------*/
+
+/* || Box Sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* || Body Setup */
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: Arial;
+  font-size: 1rem;
+  background-color: ;
+  /*background-image: url("");*/
+  color: ;
+}
+
+/* || Image Settings */
+img,
+picture {
+  max-width: 100%;
+}
+
+/* || video background settings */
+Video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* || Form Element Settings */
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+/* || Remove animations for people who have turned them off */
+@media(preferes-reduced-motion: reduced) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+}
+
+/*----------------------------------------------*/
+/* | Utility Classes                              */
+/*----------------------------------------------*/
+
+/* || Only use the ones you really need them and not ones you can
+write in a regular css class.*/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.test {
+  border: solid red 1px;
+}
+
+/*----------------------------------------------*/
+/* | Header & Navigation                          */
+/*----------------------------------------------*/
+
+/* || General Layout & Styling */
+
+
+
+/* || Responsive Layout & Styling */
+/* ||| Mobile Devices */
+@media (max-width: 481px) {
+  /* … */
+  
+}
+
+/* ||| Tablets */
+@media (max-width: 768px) {
+  /* … */
+}
+
+/* ||| Small Screens/Laptops */
+@media (max-width: 1025px) {
+  /* … */
+}
+
+/* ||| Large Screens/Desktops */
+@media (max-width: 1201px) {
+  /* … */
+}
+
+
+/*----------------------------------------------*/
+/* | Main & Content Sections                      */
+/*----------------------------------------------*/
+
+/* || General Layout & Styling */
+
+/* ||| Section 1 */
+
+/* ||| Section 2 */
+
+/* ||| Section 3 */
+
+/* ||| Section 4 */
+
+
+
+/* || Responsive Layout & Styling */
+
+/* ||| Mobile Devices */
+@media (max-width: 481px) {
+  /* … */
+}
+
+/* ||| Tablets */
+@media (max-width: 768px) {
+  /* … */
+}
+
+/* ||| Small Screens/Laptops */
+@media (max-width: 1025px) {
+  /* … */
+}
+
+/* ||| Large Screens/Desktops */
+@media (max-width: 1201px) {
+  /* … */
+}
+
+
+/*----------------------------------------------*/
+/* | Footer                                       */
+/*----------------------------------------------*/
+
+/* || General Layout & Styling */
+
+
+/* || Responsive Layout & Styling */
+
+/* ||| Mobile Devices */
+@media (max-width: 481px) {
+  /* … */
+}
+
+/* ||| Tablets */
+@media (max-width: 768px) {
+  /* … */
+}
+
+/* ||| Small Screens/Laptops */
+@media (max-width: 1025px) {
+  /* … */
+}
+
+/* ||| Large Screens/Desktops */
+@media (max-width: 1201px) {
+  /* … */
+}
