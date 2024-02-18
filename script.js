@@ -80,5 +80,5 @@ function game() {
     return "It's a draw";
 }
 
-console.log(game());
+game();
 
