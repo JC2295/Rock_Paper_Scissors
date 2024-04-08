@@ -10,13 +10,19 @@
 <body>
     <div id="main-container">
         <h1 id="main-heading">Rock Paper Scissors</h1>
+        <div id="score-board-container">
+            <p>Game: <span></span>/<span></span></p>
+            <p>Computer Score: <span></span></p>
+            <p>Player Score: <span></span></p>
+        </div>
         <div id="icon-container">
-            <object  class="icon"  data="rock-icon.svg"></object>
-            <object  class="icon"  data="paper-icon.svg"></object>
-            <object  class="icon"  data="scissors-icon.svg"></object>
+            <img class="icon" src="rock-icon.svg" alt="Rock Icon">
+            <img class="icon" src="paper-icon.svg" alt="Paper Icon">
+            <img class="icon"src="scissors-icon.svg" alt="Scissors Icon">
         </div>
         <div id="button-container">
-            
+            <button class="button" id="new-game-button">New Game</button>
+            <button class="button" id="exit-button">Exit</button>
         </div>
     <div>
 
