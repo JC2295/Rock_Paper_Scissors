@@ -57,7 +57,7 @@ function game() {
 
   let gameNumber = 0;
 
-  let gameNumberContainer = document.querySelector("#gameNumberConatiner");
+  let gameNumberContainer = document.querySelector("#gameNumberContainer");
 
   let playerScore = 0;
 
