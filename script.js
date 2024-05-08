@@ -59,11 +59,19 @@ function game() {
 
   let playerScoreContainer = document.querySelector("#playerScoreContainer");
 
+  playerScoreContainer.innerText = playerScore;
+
   let computerScore = 0;
 
   let computerScoreContainer = document.querySelector("#computerScoreContainer");
 
+  computerScoreContainer.innerText = computerScore;
+
   for (let i = 0; i < 5; i++) {
+
+    gameNumber++;
+
+    gameNumberContainer.innerText = gameNumber;
 
     playerSelection = prompt("Enter Option: ");
 
@@ -81,10 +89,6 @@ function game() {
 
       computerScoreContainer.innerText = computerScore;
     }
-
-    gameNumber++;
-
-    gameNumberContainer.innerText = gameNumber;
   }
 
   if (playerScore > computerScore) {
