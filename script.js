@@ -1,3 +1,7 @@
+let newGameButton = document.querySelector("#newGameButton");
+
+newGameButton.addEventListener("click", game);
+
 function getComputerChoice() {
 
   let options = ["rock", "paper", "scissors"];
@@ -101,5 +105,5 @@ function game() {
     return "It's a draw";
 }
 
-game();
+
 
