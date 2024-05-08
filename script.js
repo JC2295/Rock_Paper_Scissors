@@ -51,8 +51,17 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 
+  let gameNumber = 0;
+
+  let gameNumberContainer = document.querySelector("#gameNumberConatiner");
+
   let playerScore = 0;
+
+  let playerScoreContainer = document.querySelector("#playerScoreContainer");
+
   let computerScore = 0;
+
+  let computerScoreContainer = document.querySelector("#computerScoreContainer");
 
   for (let i = 0; i < 5; i++) {
 
@@ -64,10 +73,18 @@ function game() {
 
     if (result == "won") {
       playerScore++;
+
+      playerScoreContainer.innerText = playerScore;
     }
     else if (result == "lost") {
       computerScore++;
+
+      computerScoreContainer.innerText = computerScore;
     }
+
+    gameNumber++;
+
+    gameNumberContainer.innerText = gameNumber;
   }
 
   if (playerScore > computerScore) {
