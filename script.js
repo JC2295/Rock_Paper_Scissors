@@ -71,11 +71,7 @@ function game() {
 
   computerScoreContainer.innerText = computerScore;
 
-  for (let i = 0; i < 5; i++) {
-
-    gameNumber++;
-
-    gameNumberContainer.innerText = gameNumber;
+  while((playerScore < 5) && (computerScore < 5)) {
 
     playerSelection = prompt("Enter Option: ");
 

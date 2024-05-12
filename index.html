@@ -11,8 +11,10 @@
     <div id="main-container">
         <h1 id="main-heading">Rock Paper Scissors</h1>
         <div id="score-board-container">
-            <p>Game: <span id="gameNumberContainer"></span>/<span>5</span></p>
-            <p>Computer Score: <span id="computerScoreContainer"></span></p>
+            <div>
+                <div id="computerSelectionContainer"></div>
+                <p>Computer Score: <span id="computerScoreContainer"></span></p>
+            </div>
             <p>Player Score: <span id="playerScoreContainer"></span></p>
         </div>
         <div id="icon-container">
@@ -21,7 +23,8 @@
             <img class="icon"src="scissors-icon.svg" alt="Scissors Icon">
         </div>
         <div id="promptContainer">
-
+            <p id="PlayMessage"></p>
+            <p id="RoundWinnerMessage"></p>
         </div>
         <div id="button-container">
             <button class="button" id="newGameButton">New Game</button>
