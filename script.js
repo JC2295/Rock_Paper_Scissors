@@ -1,3 +1,4 @@
+
 let newGameButton = document.querySelector("#newGameButton");
 
 newGameButton.addEventListener("click", game);
@@ -13,7 +14,7 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   // your code here!
-  let playerSelectionLower = playerSelection.toLowerCase();
+  let playerSelectionLower = playerSelection;
 
   if (playerSelectionLower == "rock" && computerSelection == "scissors") {
     console.log("You win, rock beats scissors");
@@ -54,26 +55,21 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-
-  let gameNumber = 0;
-
-  let gameNumberContainer = document.querySelector("#gameNumberContainer");
-
   let playerScore = 0;
 
-  let playerScoreContainer = document.querySelector("#playerScoreContainer");
+  let playerScoreContainer = document.querySelector("#player-score");
 
   playerScoreContainer.innerText = playerScore;
 
   let computerScore = 0;
 
-  let computerScoreContainer = document.querySelector("#computerScoreContainer");
+  let computerScoreContainer = document.querySelector("#computer-score");
 
-  computerScoreContainer.innerText = computerScore;
+  computerScoreContainer.innerText = computerScore;  //Problem here
 
   while((playerScore < 5) && (computerScore < 5)) {
 
-    playerSelection = prompt("Enter Option: ");
+    playerSelection = getPlayerChoice();
 
     computerSelection = getComputerChoice();
 
@@ -99,6 +95,28 @@ function game() {
   }
   else if (computerScore == playerScore)
     return "It's a draw";
+}
+
+function getPlayerChoice(){
+  
+  let choices = document.querySelector("#icon-container");
+
+  choices.addEventListener("click", (event) => {
+    
+    let target = event.target;
+
+    if(target.id === "rock-icon"){
+      return "rock";
+    }
+    else if(target.id === "paper-icon"){
+      return "paper";
+    }
+    else if(target.id === "scissors-icon"){
+      return "scissors";
+    }
+
+  });
+
 }
 
 
