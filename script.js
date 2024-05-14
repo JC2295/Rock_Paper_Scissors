@@ -17,8 +17,16 @@ computerScoreContainer.innerText = computerScore;
 
 let choices = document.querySelector("#icon-container");
 
+let msg = document.querySelector("#message");
+
+message.innerText = "Make your move!";
+
 choices.addEventListener("click", (event) => {
   
+  if(computerScore === 5 || playerScore === 5){
+    gameReset();
+  }
+
   let target = event.target;
 
   if(target.id === "rock-icon"){
@@ -34,6 +42,7 @@ choices.addEventListener("click", (event) => {
 });
 
 
+
 function gameReset(){
   playerScore = 0;
 
@@ -42,6 +51,8 @@ function gameReset(){
   computerScore = 0;
 
   computerScoreContainer.innerText = computerScore;
+
+  message.innerText = "Make your move!";
 }
 
 
@@ -97,18 +108,24 @@ function playRound(playerSelection) {
 
   computerScoreContainer.innerText = computerScore;
 
+  if ((playerScore === 5) || (computerScore === 5)){
+
+    game();
+
+  }
+
 }
 
 
 function game() {
   if (playerScore > computerScore) {
-    return "Player is the overall winner";
+    message.innerText = "Player is the overall winner";
+    //gameReset();
   }
   else if (computerScore > playerScore) {
-    return "Computer is the overall winner"
+    message.innerText("Computer is the overall winner");
+    //gameReset();
   }
-  else if (computerScore == playerScore)
-    return "It's a draw";
 }
 
 
