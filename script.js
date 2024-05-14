@@ -24,7 +24,7 @@ message.innerText = "Make your move!";
 choices.addEventListener("click", (event) => {
   
   if(computerScore === 5 || playerScore === 5){
-    gameReset();
+    message.innerText = "Reset Game";
   }
   else{
     let target = event.target;
@@ -107,6 +107,7 @@ function playRound(playerSelection) {
   playerScoreContainer.innerText = playerScore;
 
   computerScoreContainer.innerText = computerScore;
+
 
   if ((playerScore === 5) || (computerScore === 5)){
 
