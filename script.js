@@ -26,19 +26,19 @@ choices.addEventListener("click", (event) => {
   if(computerScore === 5 || playerScore === 5){
     gameReset();
   }
+  else{
+    let target = event.target;
 
-  let target = event.target;
-
-  if(target.id === "rock-icon"){
-    playRound("rock");
+    if(target.id === "rock-icon"){
+      playRound("rock");
+    }
+    else if(target.id === "paper-icon"){
+      playRound("paper");
+    }
+    else if(target.id === "scissors-icon"){
+      playRound("scissors");
+    }
   }
-  else if(target.id === "paper-icon"){
-    playRound("paper");
-  }
-  else if(target.id === "scissors-icon"){
-    playRound("scissors");
-  }
-
 });
 
 
@@ -123,7 +123,7 @@ function game() {
     //gameReset();
   }
   else if (computerScore > playerScore) {
-    message.innerText("Computer is the overall winner");
+    message.innerText = "Computer is the overall winner";
     //gameReset();
   }
 }
