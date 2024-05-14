@@ -1,7 +1,49 @@
 
 let newGameButton = document.querySelector("#newGameButton");
 
-newGameButton.addEventListener("click", game);
+newGameButton.addEventListener("click", gameReset);
+
+let playerScoreContainer = document.querySelector("#player-score");
+
+let playerScore = 0;
+
+playerScoreContainer.innerText = playerScore;
+
+let computerScoreContainer = document.querySelector("#computer-score");
+
+let computerScore = 0;
+
+computerScoreContainer.innerText = computerScore;  
+
+let choices = document.querySelector("#icon-container");
+
+choices.addEventListener("click", (event) => {
+  
+  let target = event.target;
+
+  if(target.id === "rock-icon"){
+    playRound("rock");
+  }
+  else if(target.id === "paper-icon"){
+    playRound("paper");
+  }
+  else if(target.id === "scissors-icon"){
+    playRound("scissors");
+  }
+
+});
+
+
+function gameReset(){
+  playerScore = 0;
+
+  playerScoreContainer.innerText = playerScore;
+
+  computerScore = 0;
+
+  computerScoreContainer.innerText = computerScore;
+}
+
 
 function getComputerChoice() {
 
@@ -12,81 +54,53 @@ function getComputerChoice() {
   return options[selection];
 }
 
-function playRound(playerSelection, computerSelection) {
-  // your code here!
-  let playerSelectionLower = playerSelection;
 
-  if (playerSelectionLower == "rock" && computerSelection == "scissors") {
+function playRound(playerSelection) {
+
+  computerSelection = getComputerChoice();
+
+  if (playerSelection == "rock" && computerSelection == "scissors") {
     console.log("You win, rock beats scissors");
-    return "won";
+    playerScore++;
   }
-  else if ((playerSelectionLower == "rock" && computerSelection == "paper")) {
+  else if ((playerSelection == "rock" && computerSelection == "paper")) {
     console.log("You lose, paper beats rock");
-    return "lost";
+    computerScore++;
   }
-  else if ((playerSelectionLower == "rock" && computerSelection == "rock")) {
+  else if ((playerSelection == "rock" && computerSelection == "rock")) {
     console.log("It's a draw");
-    return "drew";
   }
-  else if ((playerSelectionLower == "paper" && computerSelection == "rock")) {
+  else if ((playerSelection == "paper" && computerSelection == "rock")) {
     console.log("You win, paper beats rock");
-    return "won";
+    playerScore++;
   }
-  else if ((playerSelectionLower == "paper" && computerSelection == "paper")) {
+  else if ((playerSelection == "paper" && computerSelection == "paper")) {
     console.log("It's a draw");
-    return "drew";
   }
-  else if ((playerSelectionLower == "paper" && computerSelection == "scissors")) {
+  else if ((playerSelection == "paper" && computerSelection == "scissors")) {
     console.log("You lose, scissors beats paper");
-    return "lost";
+    computerScore++;
   }
-  else if ((playerSelectionLower == "scissors" && computerSelection == "rock")) {
+  else if ((playerSelection == "scissors" && computerSelection == "rock")) {
     console.log("You lose, rock beats scissors");
-    return "lost";
+    computerScore++;
   }
-  else if ((playerSelectionLower == "scissors" && computerSelection == "paper")) {
+  else if ((playerSelection == "scissors" && computerSelection == "paper")) {
     console.log("You win, scissors beats paper");
-    return "won";
+    playerScore++;
   }
-  else if ((playerSelectionLower == "scissors" && computerSelection == "scissors")) {
+  else if ((playerSelection == "scissors" && computerSelection == "scissors")) {
     console.log("It's a draw");
-    return "drew";
   }
-}
-
-function game() {
-  let playerScore = 0;
-
-  let playerScoreContainer = document.querySelector("#player-score");
 
   playerScoreContainer.innerText = playerScore;
 
-  let computerScore = 0;
+  computerScoreContainer.innerText = computerScore;
 
-  let computerScoreContainer = document.querySelector("#computer-score");
+}
 
-  computerScoreContainer.innerText = computerScore;  //Problem here
 
-  while((playerScore < 5) && (computerScore < 5)) {
-
-    playerSelection = getPlayerChoice();
-
-    computerSelection = getComputerChoice();
-
-    let result = playRound(playerSelection, computerSelection);
-
-    if (result == "won") {
-      playerScore++;
-
-      playerScoreContainer.innerText = playerScore;
-    }
-    else if (result == "lost") {
-      computerScore++;
-
-      computerScoreContainer.innerText = computerScore;
-    }
-  }
-
+function game() {
   if (playerScore > computerScore) {
     return "Player is the overall winner";
   }
@@ -97,27 +111,15 @@ function game() {
     return "It's a draw";
 }
 
-function getPlayerChoice(){
+
+
+
+
+
   
-  let choices = document.querySelector("#icon-container");
+ 
 
-  choices.addEventListener("click", (event) => {
-    
-    let target = event.target;
 
-    if(target.id === "rock-icon"){
-      return "rock";
-    }
-    else if(target.id === "paper-icon"){
-      return "paper";
-    }
-    else if(target.id === "scissors-icon"){
-      return "scissors";
-    }
-
-  });
-
-}
 
 
 
